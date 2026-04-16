@@ -1,0 +1,91 @@
+{
+  "lstm": {
+    "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "accuracy": [0.682, 0.725, 0.748, 0.759, 0.768, 0.775, 0.781, 0.7846, 0.7849, 0.7866],
+    "val_accuracy": [0.701, 0.732, 0.745, 0.762, 0.765, 0.778, 0.782, 0.7834, 0.7832, 0.7845],
+    "loss": [0.552, 0.518, 0.495, 0.482, 0.473, 0.465, 0.458, 0.4541, 0.4527, 0.4502],
+    "val_loss": [0.535, 0.505, 0.488, 0.475, 0.468, 0.462, 0.459, 0.4559, 0.4572, 0.4533],
+    "batch_size": 512,
+    "confusion_matrix": [[128553, 30940], [38435, 120538]],
+    "capabilities": [0.85, 0.78, 0.92, 0.65, 0.88],
+    "metrics": { "precision": 0.79, "recall": 0.78, "f1": 0.785 }
+  },
+  "cnn": {
+    "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "accuracy": [0.715, 0.758, 0.782, 0.795, 0.806, 0.814, 0.822, 0.828, 0.832, 0.8354],
+    "val_accuracy": [0.725, 0.751, 0.768, 0.774, 0.778, 0.782, 0.785, 0.784, 0.785, 0.7867],
+    "loss": [0.512, 0.485, 0.455, 0.432, 0.418, 0.405, 0.392, 0.381, 0.372, 0.3668],
+    "val_loss": [0.505, 0.482, 0.468, 0.459, 0.455, 0.452, 0.451, 0.452, 0.453, 0.4507],
+    "batch_size": 1024,
+    "confusion_matrix": [[124059, 35434], [34587, 124386]],
+    "capabilities": [0.95, 0.75, 0.78, 0.90, 0.72],
+    "metrics": { "precision": 0.79, "recall": 0.78, "f1": 0.785 }
+  },
+  "clustering": {
+    "points": [
+      {"x": 0.12, "y": 0.45, "cluster": 0}, {"x": 0.15, "y": 0.48, "cluster": 0}, {"x": -0.05, "y": 0.35, "cluster": 0},
+      {"x": 0.85, "y": -0.22, "cluster": 1}, {"x": 0.78, "y": -0.15, "cluster": 1}, {"x": 0.92, "y": -0.30, "cluster": 1},
+      {"x": -0.45, "y": -0.55, "cluster": 2}, {"x": -0.52, "y": -0.48, "cluster": 2}, {"x": -0.40, "y": -0.60, "cluster": 2}
+    ],
+    "top_words": [
+      {"cluster": 0, "words": ["just", "day", "today", "like", "want"]},
+      {"cluster": 1, "words": ["work", "tomorrow", "going", "ready", "time"]},
+      {"cluster": 2, "words": ["sad", "miss", "sorry", "wish", "home"]}
+    ]
+  },
+  "capability_labels": ["Processing Speed", "Context Memory", "Language Meaning", "Work Efficiency", "Long Text Accuracy"],
+  "corpus_health": {
+    "entropy": 14.73,
+    "total_records": 1600000,
+    "class_ratio": "1:1",
+    "vocabulary_size": 25000,
+    "training_time": "4.2 hrs",
+    "avg_length": 65
+  },
+  "length_dist": {
+    "bins": ["0-20", "20-40", "40-60", "60-80", "80-100", "100+"],
+    "counts": [12, 25, 45, 80, 55, 30]
+  },
+  "top_predictors": {
+    "positive": ["love", "good", "happy", "thanks", "great", "awesome", "perfect", "better", "best", "enjoy"],
+    "negative": ["sad", "sorry", "hate", "bad", "sick", "miss", "lost", "tired", "broke", "worst"]
+  },
+  "linguistic_audit": {
+    "labels": ["A", "E", "G", "H", "I", "K", "S", "T", "W", "Y"],
+    "standard": [8.12, 12.02, 2.03, 5.92, 7.31, 0.69, 6.28, 9.10, 2.09, 2.11],
+    "social": [7.88, 11.22, 3.87, 3.87, 6.55, 2.08, 6.23, 7.20, 2.47, 2.81]
+  },
+  "efficiency": {
+    "labels": ["Training Time (Hrs)", "Model Size (MB)", "Peak Accuracy (%)"],
+    "lstm": [4.2, 145, 79],
+    "cnn": [1.1, 48, 83.5]
+  },
+  "random_samples": [
+    {"text": "@switchfoot http://twitpic.com/2y1zl - Awww, that's a bummer.", "category": "Negative"},
+    {"text": "is upset that he can't update his Facebook by texting it... and might cry.", "category": "Frustration"},
+    {"text": "@Kenichan I dived many times for the ball. Managed to save 50%.", "category": "Achievement"},
+    {"text": "my whole body feels itchy and like its on fire.", "category": "Distress"},
+    {"text": "at school.. nothing to do. i am so bored!", "category": "Daily Life"},
+    {"text": "I just saw a floating cupcake. My life is complete.", "category": "Sarcasm"},
+    {"text": "I hate it when I'm eating a snack and I realize I'm not actually hungry.", "category": "Observation"},
+    {"text": "Good morning! Wishing everyone a productive day today.", "category": "Positive"},
+    {"text": "Thanks for the follow! Glad to be connected.", "category": "Politeness"},
+    {"text": "I feel so lucky to have such amazing friends and family.", "category": "Gratitude"}
+  ],
+  "intelligence": {
+    "temporal_pulse": [65, 62, 58, 55, 52, 50, 48, 45, 48, 52, 55, 58, 60, 62, 65, 68, 72, 75, 78, 80, 78, 75, 70, 68],
+    "xai_weights": { 
+        "hate": -0.9, "bad": -0.7, "sad": -0.6, "no": -0.3, "not": -0.4, 
+        "love": 0.9, "good": 0.8, "happy": 0.7, "thanks": 0.6, "great": 0.85, 
+        "perfect": 0.9, "awesome": 0.9, "best": 0.8, "better": 0.6, "enjoy": 0.7,
+        "worst": -0.9, "broke": -0.8, "sick": -0.7, "tired": -0.5, "miss": -0.4
+    },
+    "stress_tests": [
+        "This isn't bad at all!",
+        "I'm not exactly happy right now.",
+        "Oh great, another meeting.",
+        "Just what I wanted... a broken phone.",
+        "I love it when people are late for dinner."
+    ]
+  }
+}

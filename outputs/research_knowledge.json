@@ -1,0 +1,47 @@
+{
+    "statistical_foundation": {
+        "chi_square": {
+            "p_value": 0.0,
+            "pearson_correlation": 0.967421,
+            "interpretation": "Rejection of H0: Twitter linguistic distribution significantly deviates from Standard English baseline."
+        },
+        "dataset_pulse": {
+            "total_records": 1592328,
+            "mean_word_count": 7.24,
+            "std_dev_word_count": 4.03,
+            "max_word_count": 50,
+            "mean_char_count": 42.79,
+            "max_char_count": 189
+        }
+    },
+    "model_arena": {
+        "best_performer": "LSTM Model-1",
+        "accuracy": 0.789,
+        "batch_size": 1024,
+        "training_time_per_epoch_min": 10,
+        "architectures": [
+            "CNN Model-1 (64 Conv1D, 512 Dense, 1024 Batch)",
+            "CNN Model-2 (64 Conv1D, 512 Dense, 512 Batch)",
+            "LSTM Model-1 (1024 Batch)",
+            "LSTM Model-2 (512 Batch)",
+            "NB Model-1 (CountVectorizer)",
+            "NB Model-2 (TF-IDF)"
+        ]
+    },
+    "failure_patterns": [
+        {
+            "category": "Sarcasm",
+            "example": "lucky u scheduled today happy camper lol",
+            "true_label": "Negative",
+            "prediction": "Positive",
+            "reason": "Presence of high-polarity positive words (lucky, happy) masked the underlying negative sarcasm."
+        },
+        {
+            "category": "Ambient Noise",
+            "example": "way wanna shower n get pretty",
+            "true_label": "Negative",
+            "prediction": "Positive",
+            "reason": "Slang shortcuts (wanna, n) and positive target words created signal confusion."
+        }
+    ]
+}
