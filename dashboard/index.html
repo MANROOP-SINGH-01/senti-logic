@@ -734,7 +734,19 @@
             length_dist: { bins: ['0-20','21-40','41-60','61-80','81-100','100+'], counts: [150, 420, 890, 1200, 540, 210] },
             top_predictors: { positive: ['love','good','thanks','happy','nice'], negative: ['sad','hate','uhoh','bad','miss'] },
             linguistic_audit: { labels: ['nouns','verbs','adjectives','slang','emojis'], standard: [30,20,15,5,2], social: [25,18,12,28,15] },
-            clustering: { points: [{x:1,y:1,cluster:0},{x:2,y:2,cluster:1},{x:3,y:3,cluster:2}], top_words: [{words:['day','today']},{words:['work','school']},{words:['sad','feel']}] },
+            clustering: { 
+                points: [
+                    // Theme 1: Daily Life (Blue) - Cluster around (1, 1)
+                    ...Array.from({length: 25}, () => ({ x: 0.5 + Math.random() * 1.2, y: 0.5 + Math.random() * 1.2, cluster: 0 })),
+                    // Theme 2: Work & Planning (Pink) - Cluster around (4, 4)
+                    ...Array.from({length: 25}, () => ({ x: 3.5 + Math.random() * 1.5, y: 3.5 + Math.random() * 1.5, cluster: 1 })),
+                    // Theme 3: Emotions & Feelings (Green) - Cluster around (5, 1)
+                    ...Array.from({length: 25}, () => ({ x: 4.5 + Math.random() * 1.5, y: 0.5 + Math.random() * 1.2, cluster: 2 })),
+                    // Outliers
+                    {x: 2.5, y: 2.5, cluster: 0}, {x: 6, y: 3, cluster: 2}, {x: 1, y: 5, cluster: 1}
+                ], 
+                top_words: [{words:['day','today','chat','life']}, {words:['work','school','plan','task']}, {words:['sad','feel','love','happy']}] 
+            },
             intelligence: { temporal_pulse: [55,58,62,68,75,82,85,83,78,72,68,65,62,60,65,72,78,85,88,85,80,75,65,58], stress_tests: ["The performance is stellar","System failure imminent","Happy with the results"], xai_weights: { 'good': 0.8, 'bad': -0.8, 'happy': 0.9, 'sad': -0.9, 'stellar': 1.0, 'failure': -1.0 } },
             random_samples: [{ category: 'Life', text: 'Stellar performance on the new neural engine.' }, { category: 'Warning', text: 'System failure imminent in the legacy nodes.' }]
         };
@@ -997,7 +1009,7 @@
                         label: 'Linguistic Clusters',
                         data: pts.map(p => ({x: p.x, y: p.y})),
                         backgroundColor: pts.map(p => p.cluster === 0 ? '#6366f1' : p.cluster === 1 ? '#ec4899' : '#10b981'),
-                        pointRadius: 6
+                        pointRadius: 4
                     }]
                 },
                 options: { 
